@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+  {% block content %}
+  <div class="widget latest-posts">
+      <h2 class="h3">These are your search results</h2>
+        {% for post in queryset %}
+            <a href="{{ post.get_absolute_url }}" class="page-link">{{ post.title }}</a>
+        {% endfor %}
+  </div>
+  
+  
+  {% endblock %}
