@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'posts',
+    'crispy_forms',
     'tinymce',
     'ckeditor',
     'ckeditor_uploader',
@@ -167,7 +168,14 @@ CKEDITOR_CONFIGS = {
     'default':{
         'toolbar': 'None',
         'extraPlugins': 'codesnippet',
+        'width': '100%',
+        'removeButtons': 'Source,SelectAll,Scayt,Form,Checkbox,Radio,TextField,\
+                        Textarea,Select,Button,ImageButton,HiddenField,Flash,\
+                        Iframe,Anchor,Maximize,ShowBlocks,About,Save,NewPage,\
+                        ExportPdf,Print,Templates',
     },
 }
 
 ###################################
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
