@@ -23,16 +23,18 @@
                     <a href="#">{{ cat }}</a>
                     {% endfor %}
                   </div>
+                  {% if post.author.user == user %}
                   <div>
                     <a href="{% url 'post-update' id=post.id %}">
                       <button class="btn btn-primary">Update</button></a>
                     <a href="{% url 'post-delete' id=post.id %}">
                       <button class="btn btn-danger">Delete</button></a>
                   </div>
+                  {% endif %}
                 </div>
                 <h1>{{ post.title }}<a href="#"><i class="fa fa-bookmark-o"></i></a></h1>
                 <div class="post-footer d-flex align-items-center flex-column flex-sm-row"><a href="#" class="author d-flex align-items-center flex-wrap">
-                    <div class="avatar"><img src="{{ post.author.profile_picture.url }}" alt="..." class="img-fluid"></div>
+                    <div class="avatar"><img src="{{ post.author.user.profile.image.url }}" alt="..." class="img-fluid"></div>
                     <div class="title"><span> {{ post.author.user.username }}</span></div></a>
                   <div class="d-flex align-items-center flex-wrap">       
                     <div class="date"><i class="icon-clock"></i> {{ post.timestamp|timesince }} ago</div>

@@ -1,13 +1,12 @@
 from django.db import models
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 from django.urls import reverse
 from ckeditor_uploader.fields import RichTextUploadingField
-# Create your models here.
-User = get_user_model()
+# User = get_user_model()
 
 class Author(models.Model):
+    # user = models.OneToOneField(User, on_delete=models.CASCADE)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    profile_picture = models.ImageField()
 
     def __str__(self):
         return self.user.username

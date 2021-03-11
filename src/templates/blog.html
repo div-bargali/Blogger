@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
   {% block content %}
+<style>
+  img {
+  overflow: hidden;
+  max-height: 180px;
+  width: 320px;
+  object-fit: cover;
+  }
+</style>
+
     <div class="container">
       <div class="row">
         <!-- Latest Posts -->
@@ -10,7 +19,7 @@
               <!-- post -->
               {% for post in queryset %}
               <div class="post col-xl-6">
-                <div class="post-thumbnail"><a href="{{ post.get_absolute_url }}"><img src="{{ post.thumbnail.url }}" alt="..." class="img-fluid"></a></div>
+                <div class="post-thumbnail"><a href="{{ post.get_absolute_url }}"><img src="{{ post.thumbnail.url }}" alt="..." class="img-fluid" width="640" height="480"></a></div>
                 <div class="post-details">
                   <div class="post-meta d-flex justify-content-between">
                     <!-- <div class="date meta-last">20 May | 2016</div> -->
@@ -23,7 +32,7 @@
                     <h3 class="h4"> {{ post.title }} </h3></a>
                   <p class="text-muted"> {{ post.overview }} </p>
                   <footer class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
-                      <div class="avatar"><img src="{{ post.author.profile_picture.url }}" alt="..." class="img-fluid"></div>
+                      <div class="avatar"><img src="{{ post.author.user.profile.image.url }}" alt="..." class="img-fluid"></div>
                       <div class="title"><span> {{ post.author.user.username }} </span></div></a>
                     <div class="date"><i class="icon-clock"></i> {{ post.timestamp|timesince }} ago </div>
                     <div class="comments meta-last"><i class="icon-comment"></i>{{ post.comment_count }}</div>

@@ -1,12 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
   {% block content %}
+
+<style>
+  img {
+  overflow: hidden;
+  max-height: 180px;
+  width: 320px;
+  object-fit: cover;
+  }
+</style>
     <!-- Hero Section-->
     <section style="background: url({% static 'img/hero.jpg' %}); background-size: cover; background-position: center center" class="hero">
       <div class="container">
         <div class="row">
           <div class="col-lg-7">
-            <h1>Bootstrap 4 Blog - A free template by Bootstrap Temple</h1><a href="#" class="hero-link">Discover More</a>
+            <h1>Blogger - where ideas meet!</h1><!-- <a href="#" class="hero-link">Discover More</a> -->
           </div>
         </div><a href=".intro" class="continue link-scroll"><i class="fa fa-long-arrow-down"></i> Scroll Down</a>
       </div>
@@ -16,16 +25,16 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8">
-            <h2 class="h3">Some great intro here</h2>
-            <p class="text-big">Place a nice <strong>introduction</strong> here <strong>to catch reader's attention</strong>. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderi.</p>
+            <h2 class="h3">Blogger is a place to grow and cultivate ideas.</h2>
+            <p class="text-big">Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Accusamus doloremque, ullam iste incidunt repellat, ipsam deleniti libero voluptatibus! Quis ipsum voluptas consequuntur fugit tempora inventore. Vel corrupti, dicta facilis expedita molestias. Accusamus, harum eveniet consectetur laboriosam, illo voluptatem. Animi facilis eos reiciendis, tempore accusamus enim sed, reprehenderit quos cumque eum.</p>
           </div>
         </div>
       </div>
     </section>
-    <section class="featured-posts no-padding-top">
-      <div class="container">
+    <!-- <section class="featured-posts no-padding-top">
+      <div class="container"> -->
         <!-- Post-->
-        {% for obj in object_list %}
+        <!-- {% for obj in object_list %}
         <div class="row d-flex align-items-stretch">
           {% if forloop.counter|divisibleby:2 %}
             <div class="image col-lg-5"><img src="{{ obj.thumbnail.url }}" alt="..."></div>
@@ -58,13 +67,13 @@
         {% endfor %}
 
       </div>
-    </section>
+    </section> -->
     <!-- Divider Section-->
     <section style="background: url({% static 'img/divider-bg.jpg' %}); background-size: cover; background-position: center bottom" class="divider">
       <div class="container">
         <div class="row">
           <div class="col-md-7">
-            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</h2><a href="#" class="hero-link">View More</a>
+            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</h2>
           </div>
         </div>
       </div>
